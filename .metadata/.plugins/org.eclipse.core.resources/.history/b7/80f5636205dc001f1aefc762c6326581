@@ -1,0 +1,25 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page isElIgnored="false"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Locations</title>
+</head>
+
+<h3>Locations:</h3>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Code</th>
+		<th>Name</th>
+		<th>Type</th>
+	</tr>
+	<tr>
+		<th></th>
+	</tr>
+</table>
+<body>
+</html>

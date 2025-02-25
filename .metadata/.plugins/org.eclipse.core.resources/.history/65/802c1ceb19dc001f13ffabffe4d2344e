@@ -1,0 +1,25 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Location</title>
+</head>
+<body>
+	<form action="saveLoc" method="post">	
+		<div style="display: flex; flex-direction: column; width: 200px;">
+		Id: <input type="text" name="id"/>
+		Code: <input type="text" name="code"/>
+		Name: <input type="text" name="name"/>
+		<div>
+		Type: Urban <input type="radio" name="type" value="Urban"/>
+			Rural <input type="radio" name="type" value="Rural"/>
+			</div>
+		<input type="submit" value="save"/>
+		</div>
+	</form>
+	${msg}
+	<a href="displayLocations">View All</a>
+</body>
+</html>

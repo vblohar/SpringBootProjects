@@ -1,0 +1,10 @@
+package com.vaibhav.location.repos;
+
+import com.vaibhav.location.entities.Location;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface LocationRepository extends JpaRepository<Location, Integer> {
+
+}

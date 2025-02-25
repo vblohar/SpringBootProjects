@@ -1,0 +1,18 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Location</title>
+</head>
+<body>
+	<form>	
+		Id: <input typt="text" name="id"/>
+		Code: <input typt="text" name="code"/>
+		Name: <input typt="text" name="name"/>
+		Type: Urban <input typt="radio" name="type"/>
+			Rural <input typt="radio" name="type"/>
+	</form>
+</body>
+</html>

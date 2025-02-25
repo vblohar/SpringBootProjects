@@ -1,0 +1,13 @@
+package com.vaibhav.location.util;
+
+
+@Component
+public class EmailUtilImpl implements EmailUtil {
+
+	@Override
+	public void sendEmail(String toAddress, String subject, String body) {
+		
+
+	}
+
+}

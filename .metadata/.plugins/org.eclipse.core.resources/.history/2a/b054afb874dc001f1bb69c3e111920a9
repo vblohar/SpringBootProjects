@@ -1,0 +1,5 @@
+package com.vaibhav.location.util;
+
+public interface EmailUtil {
+
+}
