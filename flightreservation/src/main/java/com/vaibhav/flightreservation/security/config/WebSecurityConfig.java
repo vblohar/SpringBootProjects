@@ -7,7 +7,9 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -40,20 +42,20 @@ public class WebSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 	    return http
-	    		 .csrf(c -> c.disable())
+	    		 .csrf(AbstractHttpConfigurer::disable)
 	        // Configure URL access rules
 	        .authorizeHttpRequests(authz -> authz
 	            .requestMatchers("/login", "/register", "/showLogin", "/showReg", "/WEB-INF/**", "/registerUser" ).permitAll() // Allow unauthenticated access to login and register pages
-	            .anyRequest().authenticated()  // Require authentication for all other requests
+	              // Require authentication for all other requests
 	        )
 	        // Enable form-based login
-	        .formLogin(form -> form // Custom login page URL (or default /login)
-	        		.loginPage("/showLogin") 
+	        .formLogin(
+					form -> form // Custom login page URL (or default /login)
+	        		.loginPage("/showLogin")
 	            .permitAll() // Allow unauthenticated access to the login page
 	        )
 	        // Enable logout functionality
-	        .logout(logout -> logout
-	            .permitAll()  // Allow unauthenticated access to logout
+	        .logout(LogoutConfigurer::permitAll  // Allow unauthenticated access to logout
 	        )
 	        .build();  // Return the configured SecurityFilterChain
 	}
@@ -64,7 +66,7 @@ public class WebSecurityConfig {
 //		return http.authorizeHttpRequests(authorizeRequests -> authorizeRequests
 //				.requestMatchers("/", "/showReg", "/index.html", "/login/registerUser", "/showLogin").permitAll() // Public
 //																													// pages
-//				
+//
 //		).build();
 //	}
 }

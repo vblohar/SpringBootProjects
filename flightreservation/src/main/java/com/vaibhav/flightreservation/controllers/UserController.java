@@ -32,7 +32,8 @@ public class UserController {
 	}
 	@RequestMapping("/showLogin")
 	public String login() {
-		return "login/login";
+//		return "login/login";
+		return "forward:/WEB-INF/jsps/login/login.jsp";
 	}
 	
 	@RequestMapping(value="/registerUser", method = RequestMethod.POST)
