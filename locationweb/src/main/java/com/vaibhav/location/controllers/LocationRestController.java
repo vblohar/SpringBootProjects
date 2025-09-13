@@ -17,8 +17,8 @@ import com.vaibhav.location.entities.Location;
 import com.vaibhav.location.repos.LocationRepository;
 import com.vaibhav.location.service.LocationService;
 
-@RestController
-@RequestMapping("/locations")
+//@RestController
+//@RequestMapping("/locations")
 public class LocationRestController {
 	
 	@Autowired
